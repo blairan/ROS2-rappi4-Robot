@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'pub_node=raspi_bot.publisher_node:main',
+            'sub_node=raspi_bot.subsrciber_node:main',
         ],
     },
 )

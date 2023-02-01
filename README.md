@@ -8,6 +8,7 @@ this repository is base on Raspiberry
 - Subscriber
 
 ### 2.test_pwm_1.py(gpio_pin_test)
+- test_pwm_driver
 * see this error "PermissionError: [Errno 13] Permission denied: '/dev/i2c-1'"  to do..
-$ sudo chown blairan /dev/i2c-1
-$ sudo chmod g+rw /dev/i2c-1
+    `$ sudo chown blairan /dev/i2c-1`
+    `$ sudo chmod g+rw /dev/i2c-1`

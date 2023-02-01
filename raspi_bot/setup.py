@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'raspi_bot'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,6 +25,7 @@ setup(
         'console_scripts': [
             'pub_rpi_node=raspi_bot.publisher_node:main',
             'sub_rpi_node=raspi_bot.subsrciber_node:main',
+            'cmd_vel_pwm_node=raspi_bot.cmd_to_pwm:main',
         ],
     },
 )

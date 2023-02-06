@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'raspi_bot'
 
@@ -10,6 +12,12 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'meshes'), glob('meshes/*')),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')),
+        (os.path.join('share', package_name, 'qr_code_world'), glob('qr_code_world/*')),
+        
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,6 +30,7 @@ setup(
         'console_scripts': [
             'pub_node=raspi_bot.publisher_node:main',
             'sub_node=raspi_bot.subsrciber_node:main',
+            'qr_maze_node=raspi_bot.qr_maze_drive:main',
         ],
     },
 )
